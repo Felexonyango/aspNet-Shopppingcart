@@ -1,0 +1,12 @@
+﻿global using  Microsoft.EntityFrameworkCore;
+global using  ShopOnline.API.Data;
+global using  ShopOnline.API.Respositores;
+global using  ShopOnline.API.Respositores.Contracts;
+global using  Microsoft.AspNetCore.Mvc;
+global using  Microsoft.AspNetCore.Identity;
+global using  Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using  ShopOnline.API.Entites;
+global using  ShopOnline.API.Extensions;
+global using AutoMapper;
+global using ShopOnline.Models.Dtos;
+global using ShopOnline.Models.Enums;

@@ -1,0 +1,49 @@
+﻿@page "/checkout"
+@inherits CheckoutBase
+
+
+<div class="row mt-5">
+	<div class="col-md-5">
+        <div id="smart-button-container" style="width: 75%; margin: 0 auto;">
+            <input type="hidden" name="descriptionInput" id="description" @bind="PaymentDescription" />
+            <input type="hidden" name="amountInput" id="amount" @bind="PaymentAmount">
+            <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
+        </div>
+    </div>
+    <div class="col-md-6 m-3">
+		<h3 class="text-center">CHECKOUT SUMMARY</h3>
+        <table class="table mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Image</th>
+                    <th>Quantity X Product</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in CartItems)
+                {
+                    <tr>
+                        <td class="vertical-align"><img style="max-width:50px" src="@item.ProductImageURL" alt="" /></td>
+                        <td> @item.Qty x @item.ProductName</td>
+                        <td>@item.TotalPrice.ToString("C")</td>
+                    </tr>
+                }
+                </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"><b>SubTotal</b></td>
+                    <td><b>@SubTotal.ToString("C")</b></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Shipping</b></td>
+                    <td><b>@ShippingCost.ToString("C")</b></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><h5><b>Total</b></h5></td>
+                    <td><h5><b>@PaymentAmount.ToString("C")</b></h5></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

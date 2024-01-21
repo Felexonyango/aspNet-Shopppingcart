@@ -1,0 +1,35 @@
+﻿<div class="mb-3">
+	<button 
+		class="btn btn-outline-secondary" @onclick = "() => Decrement()">
+		<i class="bi bi-dash-square-dotted"></i>
+	</button>
+	<span class="mx-2">@Counter</span>
+	<button class="btn btn-outline-secondary" @onclick="() => Increment()">
+		<i class="bi bi-plus-square-dotted"></i>
+	</button>
+</div>
+
+
+@code{
+	[Parameter]
+	public int Counter { get; set; } = 1;
+
+	[Parameter]
+	public EventCallback<int> OnCounterChanged { get; set; }
+
+	public async Task Increment()
+	{
+		++Counter;
+		await OnCounterChanged.InvokeAsync(Counter);
+	}
+
+	public async Task Decrement()
+	{
+		if (Counter > 1)
+		{
+			--Counter;
+			await OnCounterChanged.InvokeAsync(Counter);
+		}
+
+	}
+}

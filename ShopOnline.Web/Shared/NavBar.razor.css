@@ -1,0 +1,24 @@
+﻿nav{
+    font-weight: 400;
+    background-color: rgb(255, 255, 255, 0.80);
+    margin-bottom: 50px;
+}
+
+.navbar-brand {
+    font-family: 'Gasoek One', sans-serif;
+    color: rgb(25, 25, 25);
+}
+
+.nav-link {
+    color: rgb(25, 25, 25);
+}
+
+.nav-item, i{
+    margin: 0 10%;
+    font-size: 1.2em;
+    transition: ease-in-out .4s;
+}
+
+.nav-item:hover{
+    font-size: 1.3em;
+}

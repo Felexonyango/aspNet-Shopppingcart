@@ -1,0 +1,39 @@
+﻿.main-footer {
+    background-color: black;
+    color: white;
+    margin-top: 100px;
+    padding: .5em;
+}
+
+.brand-name {
+    font-family: 'Gasoek One', sans-serif;
+    font-size: 20px;
+}
+
+.main-footer ul{
+    list-style: none;
+    margin: 0;
+}
+
+.main-footer ul li{
+    display: inline;
+    margin: 0 1em;
+}
+
+.main-footer ul li i{
+    display: inline-block;
+    margin-left: 2em;
+    color: rgb(208, 208, 208);
+}
+
+
+.main-footer ul li i:hover{
+    color: white;
+
+}
+
+.main-footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
